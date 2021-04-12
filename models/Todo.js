@@ -1,6 +1,6 @@
-const {Schema, model} = requuire("mongoose")
+const {Schema, model} = require("mongoose")
 
-todoSchema = new Schema({
+const todoSchema = new Schema({
     text:{
         type: String,
         required : true,
@@ -9,4 +9,6 @@ todoSchema = new Schema({
         type: Boolean,
         default: false,
     },
-})
+}, {timestamps :true,})
+
+module.exports = model("Todo", todoSchema);
